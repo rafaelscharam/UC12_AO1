@@ -85,13 +85,27 @@ namespace XUnitTest
 
             //Assert -- Verificar
 
-            Assert.InRange(resultado, 30, 39.9);
-            return ("Obesidade");
+            Assert.InRange(resultado, 30, 34.9);
+            return ("Grau de Obesidade I");
 
         }
 
         [Fact]
-        public string Calculo_Obesidade_Grave()
+        public string Calculo_Obesidade_II()
+        {
+            //Act -- Agir
+
+            var resultado = Operacoes.Calculo(peso, altura);
+
+            //Assert -- Verificar
+
+            Assert.InRange(resultado, 35, 39.9);
+            return ("Grau de Obesidade II");
+
+        }
+
+        [Fact]
+        public string Calculo_Obesidade_III()
         {
             //Act -- Agir
 
@@ -100,7 +114,7 @@ namespace XUnitTest
             //Assert -- Verificar
 
             Assert.InRange(resultado, 40, 999);
-            return ("Obesidade Grave");
+            return ("Grau de Obesidade III");
 
         }
     }
